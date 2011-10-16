@@ -28,20 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button = new System.Windows.Forms.Panel();
+            this.Table = new System.Windows.Forms.Panel();
+            this.Table2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button
+            // Table
             // 
-            this.button.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button.Location = new System.Drawing.Point(24, 12);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(165, 209);
-            this.button.TabIndex = 0;
-            this.button.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.button.Click += new System.EventHandler(this.panel1_Click);
-            this.button.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.button.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.Table.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Table.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Table.Location = new System.Drawing.Point(24, 12);
+            this.Table.Name = "Table";
+            this.Table.Size = new System.Drawing.Size(165, 209);
+            this.Table.TabIndex = 0;
+            this.Table.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.Table.Click += new System.EventHandler(this.panel1_Click);
+            this.Table.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.Table.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // Table2
+            // 
+            this.Table2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Table2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Table2.Location = new System.Drawing.Point(400, 83);
+            this.Table2.Name = "Table2";
+            this.Table2.Size = new System.Drawing.Size(165, 209);
+            this.Table2.TabIndex = 1;
             // 
             // Form1
             // 
@@ -49,7 +60,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(727, 438);
-            this.Controls.Add(this.button);
+            this.Controls.Add(this.Table2);
+            this.Controls.Add(this.Table);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
@@ -61,7 +73,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel button;
+        private System.Windows.Forms.Panel Table;
+        private System.Windows.Forms.Panel Table2;
     }
 }
 

@@ -12,13 +12,6 @@ namespace Generateur_MCD_MLD
 {
     public partial class Form1 : Form
     {
-        public class Ligne
-        {
-            public Pen pens;
-            public Point Starts;
-            public Point Fins;
-        }
-
         Point Start;
         Point Fin;
         Boolean clic;
@@ -43,14 +36,14 @@ namespace Generateur_MCD_MLD
             {
                 _buttonIsMoving = true;
                 _cursOnButton = new Point(e.X, e.Y);
-                button.BringToFront();
+                Table.BringToFront();
             }
             else if (_buttonIsMoving)
             {
                 afficherleslignes();
                 Point point = PointToClient(MousePosition);
-                button.Left = point.X - _cursOnButton.X;
-                button.Top = point.Y - _cursOnButton.Y;
+                Table.Left = point.X - _cursOnButton.X;
+                Table.Top = point.Y - _cursOnButton.Y;
             }
         }
 
@@ -60,6 +53,8 @@ namespace Generateur_MCD_MLD
                 return;
 
             // Traitement à effectuer lors d'un clique sur le boutton
+            clic = true;
+            Start = new Point(Table.Width, (Table.Height/2));
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -81,7 +76,6 @@ namespace Generateur_MCD_MLD
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-           
             if (Start.X == 0)
             {
                 clic = true;
@@ -136,7 +130,12 @@ namespace Generateur_MCD_MLD
             Start = new Point(0, 0);
             Fin = new Point(0, 0);
         }
-   
+    }
 
+    public class Ligne
+    {
+        public Pen pens;
+        public Point Starts;
+        public Point Fins;
     }
 }
