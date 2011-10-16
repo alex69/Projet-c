@@ -6,3 +6,11 @@ C:\Users\Administrateur\Desktop\Genereateur MCD MLD\Generateur MCD MLD\obj\Debug
 C:\Users\Administrateur\Desktop\Genereateur MCD MLD\Generateur MCD MLD\obj\Debug\Generateur MCD MLD.csproj.GenerateResource.Cache
 C:\Users\Administrateur\Desktop\Genereateur MCD MLD\Generateur MCD MLD\obj\Debug\Generateur MCD MLD.exe
 C:\Users\Administrateur\Desktop\Genereateur MCD MLD\Generateur MCD MLD\obj\Debug\Generateur MCD MLD.pdb
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur MCD MLD.exe
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur MCD MLD.pdb
+C:\Users\Alexandre\Projet-c\bin\Debug\Generateur MCD MLD.exe
+C:\Users\Alexandre\Projet-c\bin\Debug\Generateur MCD MLD.pdb
+C:\Users\Alexandre\Projet-c\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur_MCD_MLD.Properties.Resources.resources
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur MCD MLD.csproj.GenerateResource.Cache
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur_MCD_MLD.Form1.resources

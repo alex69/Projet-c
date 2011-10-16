@@ -12,6 +12,13 @@ namespace Generateur_MCD_MLD
 {
     public partial class Form1 : Form
     {
+        public class Ligne
+        {
+            public Pen pens;
+            public Point Starts;
+            public Point Fins;
+        }
+
         Point Start;
         Point Fin;
         Boolean clic;
@@ -72,33 +79,6 @@ namespace Generateur_MCD_MLD
           
         }
 
-        public void afficherligne() {
-            Graphics NewGraphic = this.CreateGraphics();
-            Pen myPen = new Pen(System.Drawing.Color.Black, 2);
-            NewGraphic.DrawLine(myPen, Start, Fin);
-            Ligne ligne = new Ligne();
-            ligne.pens = myPen;
-            ligne.Starts = Start;
-            ligne.Fins = Fin;
-            tabpoint.Add(ligne);
-            Start = new Point(0, 0);
-            Fin = new Point(0, 0);
-        }
-        public void afficherleslignes()
-        {
-            foreach (Ligne ligne in tabpoint)
-            {
-                NewGraphic.DrawLine(ligne.pens, ligne.Starts, ligne.Fins);
-            }
-
-        }
-        public struct Ligne
-        {
-            public Pen pens;
-            public Point Starts;
-            public Point Fins;
-        }
-
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
            
@@ -134,6 +114,28 @@ namespace Generateur_MCD_MLD
             clic = false;
         }
 
+        public void afficherleslignes()
+        {
+            foreach (Ligne ligne in tabpoint)
+            {
+                NewGraphic.DrawLine(ligne.pens, ligne.Starts, ligne.Fins);
+            }
+
+        }
+
+        public void afficherligne()
+        {
+            Graphics NewGraphic = this.CreateGraphics();
+            Pen myPen = new Pen(System.Drawing.Color.Black, 2);
+            NewGraphic.DrawLine(myPen, Start, Fin);
+            Ligne ligne = new Ligne();
+            ligne.pens = myPen;
+            ligne.Starts = Start;
+            ligne.Fins = Fin;
+            tabpoint.Add(ligne);
+            Start = new Point(0, 0);
+            Fin = new Point(0, 0);
+        }
    
 
     }
