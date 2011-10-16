@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Table = new System.Windows.Forms.Panel();
-            this.Table2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Table
@@ -45,22 +44,12 @@
             this.Table.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.Table.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
-            // Table2
-            // 
-            this.Table2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Table2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Table2.Location = new System.Drawing.Point(400, 83);
-            this.Table2.Name = "Table2";
-            this.Table2.Size = new System.Drawing.Size(165, 209);
-            this.Table2.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(727, 438);
-            this.Controls.Add(this.Table2);
             this.Controls.Add(this.Table);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -74,7 +63,6 @@
         #endregion
 
         private System.Windows.Forms.Panel Table;
-        private System.Windows.Forms.Panel Table2;
     }
 }
 

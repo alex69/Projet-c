@@ -138,4 +138,11 @@ namespace Generateur_MCD_MLD
         public Point Starts;
         public Point Fins;
     }
+
+    public class Table
+    {
+        public string nom { get; set; }
+        public ArrayList listepoints(Point pt) { get; set; }
+        public ArrayList listelignes { get; set; }
+    }
 }
