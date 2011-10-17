@@ -151,14 +151,6 @@ namespace Generateur_MCD_MLD
             Fin = new Point(0, 0);
         }
     }
-
-    public class Ligne
-    {
-        public Pen pens;
-        public Point Starts;
-        public Point Fins;
-    }
-
     public class Table
     {
         public string nom { get; set; }
