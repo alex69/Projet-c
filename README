@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////
-/|           PROJET-C# | CSII1i				  |/
+/|           PROJET-C# | CSII1 i              |/
 /|--------------------------------------------|/
-/|		  	 GENERATEUR MCD/MLD			      |/
+/|           GENERATEUR MCD/MLD               |/
 ////////////////////////////////////////////////
 
 Ce projet est un générateur de MCD et MLD à partir d'un dictionnaire des données et d'une matrice des dépendances fonctionnelles.

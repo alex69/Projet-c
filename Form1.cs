@@ -12,6 +12,7 @@ namespace Generateur_MCD_MLD
 {
     public partial class Form1 : Form
     {
+        private int cpt = 0;
         Point Start;
         Point Fin;
         Boolean clic;
@@ -124,8 +125,9 @@ namespace Generateur_MCD_MLD
             
         private void Form1_Load(object sender, EventArgs e)
          {
-             NewGraphic = this.CreateGraphics();
+            NewGraphic = this.CreateGraphics();
             clic = false;
+            compteur.Text = "Nombre de lignes :" + cpt.ToString();
         }
 
         public void afficherleslignes()
@@ -136,7 +138,6 @@ namespace Generateur_MCD_MLD
             }
 
         }
-
         public void afficherligne()
         {
             Graphics NewGraphic = this.CreateGraphics();
@@ -149,12 +150,11 @@ namespace Generateur_MCD_MLD
             tabpoint.Add(ligne);
             Start = new Point(0, 0);
             Fin = new Point(0, 0);
+            cpt++;
+            compteur.Text = "Nombre de lignes :" + cpt.ToString();
         }
+
+        
     }
-    public class Table
-    {
-        public string nom { get; set; }
-        public ArrayList listepoints { get; set; }
-        public ArrayList listelignes { get; set; }
-    }
+
 }
