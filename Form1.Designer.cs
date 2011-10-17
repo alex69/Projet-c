@@ -35,7 +35,7 @@
             // 
             this.Table.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Table.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Table.Location = new System.Drawing.Point(24, 12);
+            this.Table.Location = new System.Drawing.Point(256, 124);
             this.Table.Name = "Table";
             this.Table.Size = new System.Drawing.Size(165, 209);
             this.Table.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(727, 438);
             this.Controls.Add(this.Table);
             this.Name = "Form1";

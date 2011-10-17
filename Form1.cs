@@ -54,7 +54,7 @@ namespace Generateur_MCD_MLD
 
             // Traitement à effectuer lors d'un clique sur le boutton
             clic = true;
-            Start = new Point(Table.Width, (Table.Height/2));
+            Start = new Point((Table.Location.X+Table.Width), (Table.Location.Y+Table.Height/2));
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -93,10 +93,30 @@ namespace Generateur_MCD_MLD
         {
             if (clic == true)
             {
-                NewGraphic.Clear(Color.LightBlue);
+                NewGraphic.Clear(Color.WhiteSmoke);
                 afficherleslignes();
                 Pen myPen = new Pen(System.Drawing.Color.Black, 2);
                 NewGraphic.DrawLine(myPen, Start, new Point(e.X, e.Y));
+
+                if (e.Y > (Table.Location.Y+Table.Height)) {
+                    //Si le curseur est en dessous de la table
+                    Start = new Point((Table.Location.X + Table.Width/2), (Table.Location.Y + Table.Height));
+                }
+                else if ((e.Y < (Table.Location.Y + Table.Height)) && (e.Y < Table.Location.Y))
+                {
+                    //Si le curseur est au dessus de la table
+                    Start = new Point((Table.Location.X + Table.Width / 2), (Table.Location.Y));
+                }
+                else if (e.X > (Table.Location.X + Table.Width))
+                {
+                    //Si le curseur est à droite de la table
+                    Start = new Point((Table.Location.X + Table.Width), (Table.Location.Y + Table.Height / 2));
+                }
+                else if (e.X < (Table.Location.Y + Table.Height))
+                {
+                    //Si le curseur est à gauche de la table
+                    Start = new Point((Table.Location.X), (Table.Location.Y + Table.Height / 2));
+                }
                 
             }
         }
