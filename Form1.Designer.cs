@@ -41,7 +41,7 @@
             this.Table.Size = new System.Drawing.Size(165, 209);
             this.Table.TabIndex = 0;
             this.Table.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.Table.Click += new System.EventHandler(this.panel1_Click);
+            this.Table.Click += new System.EventHandler(this.Table_Click);
             this.Table.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.Table.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
@@ -65,7 +65,6 @@
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
-            this.Click += new System.EventHandler(this.Form1_Click);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
