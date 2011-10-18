@@ -127,7 +127,7 @@ namespace Generateur_MCD_MLD
          {
             NewGraphic = this.CreateGraphics();
             clic = false;
-            compteur.Text = "Nombre de lignes :" + cpt.ToString() + " (BABIBEL)";
+            compteur.Text = "Nombre de lignes :" + cpt.ToString() + " (Transmission Dieu)";
         }
 
         public void afficherleslignes()
