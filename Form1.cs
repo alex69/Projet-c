@@ -134,17 +134,17 @@ namespace Generateur_MCD_MLD
           // Attention! Le fichier load aura prealablement transmis devra posséder la deserialisation.
          try{  
               XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
-              TextWriter tw = new StreamWriter(@"C:\Users\Administrateur\Projet-c\book1.xml");
+              TextWriter tw = new StreamWriter(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml");
               serializer.Serialize(tw, ld);
               tw.Close(); 
          }catch {
          }
       }
 
-        public LOAD deserialisation() { //Deserialise le fichier xml et nous renvoi l objet
+        public LOAD deserialisation() { //Deserialise le fichier xml et nous renvois l objet
                         
-            XmlSerializer serializer = new XmlSerializer(typeof(LOAD)); 
-            TextReader tr = new StreamReader(@"C:\Users\Administrateur\Projet-c\book1.xml");
+            XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
+            TextReader tr = new StreamReader(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml");
             LOAD tests = (LOAD)serializer.Deserialize(tr); 
             tr.Close(); 
             return tests;
