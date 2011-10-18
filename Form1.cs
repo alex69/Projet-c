@@ -127,7 +127,7 @@ namespace Generateur_MCD_MLD
          {
             NewGraphic = this.CreateGraphics();
             clic = false;
-            compteur.Text = "Nombre de lignes :" + cpt.ToString();
+            compteur.Text = "Nombre de lignes :" + cpt.ToString() + " Bah";
         }
 
         public void afficherleslignes()
