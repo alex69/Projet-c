@@ -157,8 +157,7 @@ namespace Generateur_MCD_MLD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dicounet dicou = new Dicounet();
-            dicou.Show();
+            MessageBox.Show("ok");
         }
 
         
