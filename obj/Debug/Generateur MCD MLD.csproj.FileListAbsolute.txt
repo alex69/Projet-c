@@ -24,3 +24,9 @@ C:\Users\Alexandre\.ssh\Projet-c\obj\Debug\Generateur_MCD_MLD.Properties.Resourc
 C:\Users\Alexandre\.ssh\Projet-c\obj\Debug\Generateur MCD MLD.csproj.GenerateResource.Cache
 C:\Users\Administrateur\Projet-c\obj\Debug\Generateur MCD MLD.exe
 C:\Users\Administrateur\Projet-c\obj\Debug\Generateur MCD MLD.pdb
+C:\Users\Administrateur\Projet-c\bin\Debug\Generateur MCD MLD.exe
+C:\Users\Administrateur\Projet-c\bin\Debug\Generateur MCD MLD.pdb
+C:\Users\Administrateur\Projet-c\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrateur\Projet-c\obj\Debug\Generateur_MCD_MLD.Form1.resources
+C:\Users\Administrateur\Projet-c\obj\Debug\Generateur_MCD_MLD.Properties.Resources.resources
+C:\Users\Administrateur\Projet-c\obj\Debug\Generateur MCD MLD.csproj.GenerateResource.Cache
