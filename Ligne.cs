@@ -10,8 +10,8 @@ using System.Collections;
 
 namespace Generateur_MCD_MLD
 {
-    class Ligne
-    {
+    class Ligne{
+    
             public Pen pens;
             public Point Starts;
             public Point Fins;

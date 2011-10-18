@@ -7,7 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using System.Runtime.Serialization;
+using System.IO;
+using System.Xml.Serialization;
+using System.Net;
+using System.Threading;
+using System.Data.OleDb;
 
+using Microsoft.VisualBasic;
 namespace Generateur_MCD_MLD
 {
     public partial class Form1 : Form
@@ -18,9 +25,10 @@ namespace Generateur_MCD_MLD
         Point Fin;
         Boolean clic;
         ArrayList tabpoint = new ArrayList();
+      
         public Form1()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private bool _mouseDownOverButton;
@@ -122,8 +130,27 @@ namespace Generateur_MCD_MLD
                 
             }
         }
-            
-        private void Form1_Load(object sender, EventArgs e)
+      public void serialisationload(LOAD ld){ //on lui transmet l'objet LOAD que l'on veur serialiser! 
+          // Attention! Le fichier load aura prealablement transmis devra posséder la deserialisation.
+         try{  
+              XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
+              TextWriter tw = new StreamWriter(@"C:\Users\Administrateur\Projet-c\book1.xml");
+              serializer.Serialize(tw, ld);
+              tw.Close(); 
+         }catch {
+         }
+      }
+
+        public LOAD deserialisation() { //Deserialise le fichier xml et nous renvoi l objet
+                        
+            XmlSerializer serializer = new XmlSerializer(typeof(LOAD)); 
+            TextReader tr = new StreamReader(@"C:\Users\Administrateur\Projet-c\book1.xml");
+            LOAD tests = (LOAD)serializer.Deserialize(tr); 
+            tr.Close(); 
+            return tests;
+             
+       }
+                 private void Form1_Load(object sender, EventArgs e)
          {
             NewGraphic = this.CreateGraphics();
             clic = false;
@@ -157,7 +184,25 @@ namespace Generateur_MCD_MLD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ok");
+            LOAD ld = new LOAD(); ;
+            ld.test = "OUI";
+           serialisationload(ld); // Je serialise mon fichier
+               MessageBox.Show("Sérialisation effectuée avec succès!","OUIAIIIAIAI");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show(deserialisation().test);
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LOAD ok = new LOAD();
+            ok.test = "kk";
+            serialisationload(ok);
+            MessageBox.Show(deserialisation().test);
         }
 
         
