@@ -127,7 +127,7 @@ namespace Generateur_MCD_MLD
          {
             NewGraphic = this.CreateGraphics();
             clic = false;
-            compteur.Text = "Nombre de lignes :" + cpt.ToString() + " (Alexandre le grand)";
+            compteur.Text = "Nombre de lignes :" + cpt.ToString() + " (Alexandre le Professionnel)";
         }
 
         public void afficherleslignes()
@@ -153,6 +153,12 @@ namespace Generateur_MCD_MLD
             Fin = new Point(0, 0);
             cpt++;
             compteur.Text = "Nombre de lignes :" + cpt.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dicounet dicou = new Dicounet();
+            dicou.Show();
         }
 
         
