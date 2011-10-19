@@ -12,20 +12,20 @@ namespace Generateur_MCD_MLD
         ArrayList  VTable = new ArrayList();
         public string nom;
 
-    public String lectureVtable(){
-    String str = "";
-     foreach (Table tab in VTable)
-     {
-         str = str + tab.nom;  
-            }
-     return str;
-    
+    public String lectureVtable(){ //Renvoi une chaine contenant tous les noms des tables
+        String str = "";
+        foreach (Table tab in VTable)
+         {
+            str = str + ";" + tab.nom;  
+         }
+         return str;    
     }
-        public void addVtable(Table tb) {
+
+        public void addVtable(Table tb) {//Ajoute un objet TABLE dans Vtable
             VTable.Add(tb);
         }
 
-        public ArrayList getVtable() {
+        public ArrayList getVtable() {//Return l'arraylist VTABLE
             return VTable;
         }
     }

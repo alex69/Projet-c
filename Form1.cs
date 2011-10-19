@@ -135,43 +135,47 @@ namespace Generateur_MCD_MLD
                 
             }
         }
-      public void serialisationload(LOAD ld){ //on lui transmet l'objet LOAD que l'on veur serialiser! 
-          // Attention! Le fichier load aura prealablement transmis devra posséder la deserialisation.
-         try{  
+      public void serialisationload(LOAD ld){ //on lui transmet l'objet LOAD que l'on veux serialiser! 
+       
+          try{  
               Stream stream = File.Open(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\load.bin", FileMode.Create);
               BinaryFormatter formatter = new BinaryFormatter();
               // On sérialise
               formatter.Serialize(stream, ld);
               stream.Close();
-
-
-
          }catch {
+             MessageBox.Show("Erreur durant la serialisation");
          }
       }
 
-        public LOAD deserialisation() { //Deserialise le fichier xml et nous renvois l objet
-                      
+        public LOAD deserialisation() { //Deserialise le fichier load.bin et nous renvois l objet qui est dans la variable tests
+          try
+            {  
+                    
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = File.Open(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\load.bin", FileMode.Open);
             LOAD tests = (LOAD)formatter.Deserialize(stream); 
             stream.Close();
             MessageBox.Show("Deserialisation ok!");
             return tests;
+         }catch {
+             MessageBox.Show("Erreur durant la serialisation");
+             return null;
+         }
        }
         private void Form1_Load(object sender, EventArgs e)
          { 
             if(File.Exists(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\load.bin")){
-                   deserialisation();
+                //Si le load.bin existe  
+                deserialisation();
              } 
             else{
-                LOAD ld = new LOAD();
-                   ld.nom = "ok";
+                //le fichier existe pas
+                   LOAD ld = new LOAD();
+                   ld.nom = "ok";//TEST
                    serialisationload(ld);
                    loadencours = deserialisation();
-                   MessageBox.Show(loadencours.nom);
-                   MessageBox.Show(loadencours.lectureVtable());
-             }
+           }
             
              chargerload();
             NewGraphic = this.CreateGraphics();

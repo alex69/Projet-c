@@ -13,11 +13,12 @@ namespace Generateur_MCD_MLD
     {
         LOAD loadencours = new LOAD();
         Form1 frm = new Form1();
-        public void chargerload() { 
-        
-        loadencours = frm.deserialisation();
-        MessageBox.Show(loadencours.nom);
+
+        public void chargerload() { //Charge l'objet deserialiser dans loadencours
+            loadencours = frm.deserialisation();
+            MessageBox.Show(loadencours.nom);
         }
+
         public frmCreation()
         {
             InitializeComponent();
@@ -32,15 +33,16 @@ namespace Generateur_MCD_MLD
             affichertable();
             textBox1.Text = "";
             textBox1.Focus();
-            MessageBox.Show(loadencours.lectureVtable());
         }
-        public void affichertable() {
+
+        public void affichertable() {//Affiche les nom des tables dans la listbox
             listBox1.Items.Clear();
             foreach (Table tab in loadencours.getVtable())
             {
                 listBox1.Items.Add(tab.nom);
             }    
         }
+
         private void frmCreation_Load(object sender, EventArgs e)
         {
             chargerload();
