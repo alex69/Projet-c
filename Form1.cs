@@ -25,12 +25,17 @@ namespace Generateur_MCD_MLD
         Point Fin;
         Boolean clic;
         ArrayList tabpoint = new ArrayList();
-      
+        LOAD loadencours = new LOAD();
         public Form1()
         {
            InitializeComponent();
         }
 
+        public void chargerload() {
+
+            loadencours = deserialisation();
+        
+        }
         private bool _mouseDownOverButton;
 
         // Indique si le boutton est en train d'être déplacé
@@ -150,8 +155,9 @@ namespace Generateur_MCD_MLD
             return tests;
              
        }
-                 private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
          {
+             chargerload();
             NewGraphic = this.CreateGraphics();
             clic = false;
             compteur.Text = "Nombre de lignes :" + cpt.ToString() + " (Alexandre le Professionnel)";
