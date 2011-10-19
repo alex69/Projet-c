@@ -141,7 +141,8 @@ namespace Generateur_MCD_MLD
               XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
               TextWriter tw = new StreamWriter(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml");
               serializer.Serialize(tw, ld);
-              tw.Close(); 
+              tw.Close();
+              MessageBox.Show("Serialisation ok!");
          }catch {
          }
       }
@@ -151,12 +152,24 @@ namespace Generateur_MCD_MLD
             XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
             TextReader tr = new StreamReader(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml");
             LOAD tests = (LOAD)serializer.Deserialize(tr); 
-            tr.Close(); 
+            tr.Close();
+            MessageBox.Show("Deserialisation ok!");
             return tests;
-             
+            
        }
         private void Form1_Load(object sender, EventArgs e)
-         {
+         { 
+            if(File.Exists(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml")){
+                   deserialisation();
+             } 
+            else{
+                LOAD ld = new LOAD();
+                   ld.nom = "ok";
+                   serialisationload(ld);
+                   loadencours = deserialisation();
+                   MessageBox.Show(loadencours.nom);
+             }
+            
              chargerload();
             NewGraphic = this.CreateGraphics();
             clic = false;
@@ -188,27 +201,12 @@ namespace Generateur_MCD_MLD
             compteur.Text = "Nombre de lignes :" + cpt.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+      
+        private void créationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LOAD ld = new LOAD(); ;
-            ld.test = "OUI";
-           serialisationload(ld); // Je serialise mon fichier
-               MessageBox.Show("Sérialisation effectuée avec succès!","OUIAIIIAIAI");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            MessageBox.Show(deserialisation().test);
-           
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            LOAD ok = new LOAD();
-            ok.test = "kk";
-            serialisationload(ok);
-            MessageBox.Show(deserialisation().test);
+            frmCreation frmcreat = new frmCreation();
+            frmcreat.Show();
         }
 
         

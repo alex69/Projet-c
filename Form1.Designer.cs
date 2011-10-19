@@ -31,19 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Table = new System.Windows.Forms.Panel();
             this.compteur = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.créationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Table
             // 
-            this.Table.AccessibleDescription = null;
-            this.Table.AccessibleName = null;
-            resources.ApplyResources(this.Table, "Table");
             this.Table.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Table.BackgroundImage = null;
             this.Table.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Table.Font = null;
+            resources.ApplyResources(this.Table, "Table");
             this.Table.Name = "Table";
             this.Table.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.Table.Click += new System.EventHandler(this.Table_Click);
@@ -52,53 +50,45 @@
             // 
             // compteur
             // 
-            this.compteur.AccessibleDescription = null;
-            this.compteur.AccessibleName = null;
             resources.ApplyResources(this.compteur, "compteur");
-            this.compteur.Font = null;
             this.compteur.Name = "compteur";
             // 
-            // button1
+            // menuStrip1
             // 
-            this.button1.AccessibleDescription = null;
-            this.button1.AccessibleName = null;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.BackgroundImage = null;
-            this.button1.Font = null;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fichierToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
             // 
-            // button2
+            // fichierToolStripMenuItem
             // 
-            this.button2.AccessibleDescription = null;
-            this.button2.AccessibleName = null;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.BackgroundImage = null;
-            this.button2.Font = null;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.créationToolStripMenuItem});
+            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
+            resources.ApplyResources(this.fichierToolStripMenuItem, "fichierToolStripMenuItem");
+            // 
+            // créationToolStripMenuItem
+            // 
+            this.créationToolStripMenuItem.Name = "créationToolStripMenuItem";
+            resources.ApplyResources(this.créationToolStripMenuItem, "créationToolStripMenuItem");
+            this.créationToolStripMenuItem.Click += new System.EventHandler(this.créationToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AccessibleDescription = null;
-            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.BackgroundImage = null;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.compteur);
             this.Controls.Add(this.Table);
-            this.Font = null;
-            this.Icon = null;
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,8 +98,9 @@
 
         private System.Windows.Forms.Panel Table;
         private System.Windows.Forms.Label compteur;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem créationToolStripMenuItem;
     }
 }
 

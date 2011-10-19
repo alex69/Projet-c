@@ -10,7 +10,8 @@ using System.Collections;
 
 namespace Generateur_MCD_MLD
 {
-    class Table
+    [Serializable]
+    public class Table
     {
         public int taille { get; set; }
         public int hauteur { get; set; }
