@@ -32,6 +32,7 @@ namespace Generateur_MCD_MLD
             affichertable();
             textBox1.Text = "";
             textBox1.Focus();
+            MessageBox.Show(loadencours.lectureVtable());
         }
         public void affichertable() {
             listBox1.Items.Clear();

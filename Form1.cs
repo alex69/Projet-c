@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 using System.Net;
 using System.Threading;
 using System.Data.OleDb;
-
+using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.VisualBasic;
 namespace Generateur_MCD_MLD
 {
@@ -138,28 +138,30 @@ namespace Generateur_MCD_MLD
       public void serialisationload(LOAD ld){ //on lui transmet l'objet LOAD que l'on veur serialiser! 
           // Attention! Le fichier load aura prealablement transmis devra posséder la deserialisation.
          try{  
-              XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
-              TextWriter tw = new StreamWriter(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml");
-              serializer.Serialize(tw, ld);
-              tw.Close();
-              MessageBox.Show("Serialisation ok!");
+              Stream stream = File.Open(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\load.bin", FileMode.Create);
+              BinaryFormatter formatter = new BinaryFormatter();
+              // On sérialise
+              formatter.Serialize(stream, ld);
+              stream.Close();
+
+
+
          }catch {
          }
       }
 
         public LOAD deserialisation() { //Deserialise le fichier xml et nous renvois l objet
-                        
-            XmlSerializer serializer = new XmlSerializer(typeof(LOAD));
-            TextReader tr = new StreamReader(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml");
-            LOAD tests = (LOAD)serializer.Deserialize(tr); 
-            tr.Close();
+                      
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = File.Open(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\load.bin", FileMode.Open);
+            LOAD tests = (LOAD)formatter.Deserialize(stream); 
+            stream.Close();
             MessageBox.Show("Deserialisation ok!");
             return tests;
-            
        }
         private void Form1_Load(object sender, EventArgs e)
          { 
-            if(File.Exists(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\book1.xml")){
+            if(File.Exists(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\load.bin")){
                    deserialisation();
              } 
             else{
@@ -168,6 +170,7 @@ namespace Generateur_MCD_MLD
                    serialisationload(ld);
                    loadencours = deserialisation();
                    MessageBox.Show(loadencours.nom);
+                   MessageBox.Show(loadencours.lectureVtable());
              }
             
              chargerload();
