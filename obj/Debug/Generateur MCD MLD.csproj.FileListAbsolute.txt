@@ -43,3 +43,7 @@ C:\Users\Administrateur\Projet-c\obj\Debug\Generateur_MCD_MLD.frmCreation.resour
 C:\Users\Administrateur\Projet-c\obj\Debug\Generateur_MCD_MLD.Form1.fr.resources
 C:\Users\Administrateur\Projet-c\bin\Debug\fr\Generateur MCD MLD.resources.dll
 C:\Users\Administrateur\Projet-c\obj\Debug\fr\Generateur MCD MLD.resources.dll
+C:\Users\Alexandre\Projet-c\bin\Debug\fr\Generateur MCD MLD.resources.dll
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur_MCD_MLD.frmCreation.resources
+C:\Users\Alexandre\Projet-c\obj\Debug\Generateur_MCD_MLD.Form1.fr.resources
+C:\Users\Alexandre\Projet-c\obj\Debug\fr\Generateur MCD MLD.resources.dll

@@ -1,9 +1,1 @@
-////////////////////////////////////////////////
-/|           PROJET-C# | CSII1 i              |/
-/|--------------------------------------------|/
-/|           GENERATEUR MCD/MLD               |/
-////////////////////////////////////////////////
-
-Ce projet est un générateur de MCD et MLD à partir d'un dictionnaire des données et d'une matrice des dépendances fonctionnelles.
-Ce projet est réalisé dans le cadre d'une première année de cycle ingénieurie à l'école de l'EPSI Lyon.
-L'équipe de travail se compose de 2 personnes : Alexandre Mérignac et Alexandre Vallet.
+Projet-C
